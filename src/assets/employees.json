@@ -8,7 +8,7 @@
   {
     "name": "Jan Kowalski",
     "age": 19,
-    "isFullTime": false,
+    "isFullTime": true,
     "position": "Mid"
   },
   {

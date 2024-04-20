@@ -9,6 +9,12 @@ import { EmployeesService } from 'src/app/core/services/employees.service'
   styleUrls: ['./employees-list.component.scss'],
 })
 export class EmployeesListComponent implements OnInit {
+  public displayedColumns: string[] = [
+    'Imię i nazwisko',
+    'Wiek',
+    'Pracownik pełnoetatowy',
+    'Stanowisko',
+  ]
   public employees: EmployeeNetland[] = []
 
   constructor(private employeesService: EmployeesService) {}

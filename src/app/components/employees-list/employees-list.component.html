@@ -1,7 +1,9 @@
 <div class="bg-white employees-list">
     <div class="employees-list__heading">
         <h2>Lista pracowników</h2>
-        <button>Nowy pracownik</button>
+        <button type="button" class="btn btn-lg btn-violet">
+            Dodaj pracownika
+        </button>
     </div>
 
     <hr />
@@ -9,10 +11,7 @@
         <thead>
             <tr>
                 <td></td>
-                <td>Imię i nazwisko</td>
-                <td>Wiek</td>
-                <td>Pracownik pełnoetatowy</td>
-                <td>Stanowisko</td>
+                <td *ngFor="let column of displayedColumns">{{ column }}</td>
                 <td></td>
             </tr>
         </thead>
@@ -21,7 +20,17 @@
                 <td>{{ index + 1 }}.</td>
                 <td>{{ employee.name }}</td>
                 <td>{{ employee.age }}</td>
-                <td>{{ employee.isFullTime }}</td>
+                <td>
+                    <span
+                        class="alert"
+                        [ngClass]="
+                            employee.isFullTime
+                                ? 'f-success bg-success'
+                                : 'f-danger bg-danger'
+                        "
+                        >{{ employee.isFullTime ? "Tak" : "Nie" }}</span
+                    >
+                </td>
                 <td>{{ employee.position }}</td>
                 <td>
                     <div class="col-action">

@@ -1,3 +1,5 @@
+@import "../base/colors";
+
 .btn {
   cursor: pointer;
   background-color: transparent;
@@ -5,8 +7,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
+
+  &-lg {
+    padding: 15px 20px;
+  }
 
   & span {
     font-size: 22px;
+  }
+}
+
+// Creating button classes
+$btnColors: (
+  "violet": $violetBackground,
+);
+
+@each $colorName, $btnColor in $btnColors {
+  .btn-#{$colorName} {
+    background-color: $btnColor;
+    color: $whiteColor;
+
+    &:hover {
+      background-color: darken($btnColor, 10%);
+    }
   }
 }

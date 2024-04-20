@@ -4,11 +4,14 @@ $primaryTextColor: #111;
 $whiteColor: #fff;
 
 // Button Colors
-
 $danger: #f37776;
+$dangerBackground: #fee9e8;
+$success: #0e560e;
+$successBackground: #e5ffe6;
 $secondary: #6c757d;
-// Table Colors
+$violetBackground: #395be2;
 
+// Table Colors
 $tableHeadBackground: #f1f4f9;
 $tableRowHover: #fafafa;
 $tableRowBorderColor: #efefef;
@@ -16,11 +19,8 @@ $tableRowBorderColor: #efefef;
 // Creating background classes
 $bgColors: (
   "white": $whiteColor,
-);
-
-$textColors: (
-  "danger": $danger,
-  "secondary": $secondary,
+  "danger": $dangerBackground,
+  "success": $successBackground,
 );
 
 @each $colorName, $bgColor in $bgColors {
@@ -28,6 +28,14 @@ $textColors: (
     background-color: $bgColor;
   }
 }
+
+// Creating text classes
+$textColors: (
+  "white": $whiteColor,
+  "danger": $danger,
+  "success": $success,
+  "secondary": $secondary,
+);
 
 @each $colorName, $textColor in $textColors {
   .f-#{$colorName} {
