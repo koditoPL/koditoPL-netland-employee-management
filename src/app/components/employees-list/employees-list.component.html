@@ -5,7 +5,7 @@
     </div>
 
     <hr />
-    <table>
+    <table class="employees-list__table">
         <thead>
             <tr>
                 <td></td>
@@ -24,8 +24,18 @@
                 <td>{{ employee.isFullTime }}</td>
                 <td>{{ employee.position }}</td>
                 <td>
-                    <button>X</button>
-                    <button>Edit</button>
+                    <div class="col-action">
+                        <button type="button" class="btn btn-outline">
+                            <span class="material-symbols-outlined f-secondary">
+                                edit_square
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-outline">
+                            <span class="material-symbols-outlined f-danger">
+                                delete
+                            </span>
+                        </button>
+                    </div>
                 </td>
             </tr>
         </tbody>

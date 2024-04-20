@@ -1,0 +1,12 @@
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & span {
+    font-size: 22px;
+  }
+}

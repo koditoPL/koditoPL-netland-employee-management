@@ -3,6 +3,10 @@ $appBackgound: #f0f3f9;
 $primaryTextColor: #111;
 $whiteColor: #fff;
 
+// Button Colors
+
+$danger: #f37776;
+$secondary: #6c757d;
 // Table Colors
 
 $tableHeadBackground: #f1f4f9;
@@ -14,8 +18,19 @@ $bgColors: (
   "white": $whiteColor,
 );
 
+$textColors: (
+  "danger": $danger,
+  "secondary": $secondary,
+);
+
 @each $colorName, $bgColor in $bgColors {
   .bg-#{$colorName} {
     background-color: $bgColor;
+  }
+}
+
+@each $colorName, $textColor in $textColors {
+  .f-#{$colorName} {
+    color: $textColor;
   }
 }
