@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+
+  & thead,
+  & tbody {
+    & > tr {
+      & > td {
+        text-align: center;
+        padding: 20px 0;
+      }
+    }
+  }
+}
