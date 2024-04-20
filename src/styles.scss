@@ -1,1 +1,6 @@
 @import "./assets/scss/index.scss";
+
+body {
+  background-color: $appBackgound;
+  color: $primaryTextColor;
+}
