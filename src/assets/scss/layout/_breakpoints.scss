@@ -1,0 +1,31 @@
+$smBreakpoint: 576px;
+$mdBreakpoint: 768px;
+$lgBreakpoint: 992px;
+$xlBreakpoint: 1200px;
+$xxlBreakpoint: 1400px;
+
+$breakpoints: (
+  "sm": (
+    min-width: $smBreakpoint,
+  ),
+  "md": (
+    min-width: $mdBreakpoint,
+  ),
+  "lg": (
+    min-width: $lgBreakpoint,
+  ),
+  "xl": (
+    min-width: $xlBreakpoint,
+  ),
+  "2xl": (
+    min-width: $xxlBreakpoint,
+  ),
+);
+
+@mixin breakpoint($point) {
+  $query: map-get($breakpoints, $point);
+
+  @media #{$query} {
+    @content;
+  }
+}
