@@ -1,5 +1,9 @@
+@import "../base/colors";
+
 table {
   width: 100%;
+  box-shadow: 0 0 6px 0 #dfdfdf;
+  border-radius: 5px;
 
   & thead,
   & tbody {
@@ -7,6 +11,34 @@ table {
       & > td {
         text-align: center;
         padding: 20px 0;
+      }
+    }
+  }
+
+  & thead {
+    & > tr {
+      border-bottom: 1px solid $tableRowBorderColor;
+
+      & > td {
+        color: #616172;
+        &:first-child {
+          min-width: 30px;
+        }
+      }
+    }
+  }
+
+  & tbody {
+    & > tr {
+      border-bottom: 1px solid $tableRowBorderColor;
+      cursor: pointer;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: #fafafa;
       }
     }
   }

@@ -1,3 +1,21 @@
+// Primary colors
 $appBackgound: #f0f3f9;
-
 $primaryTextColor: #111;
+$whiteColor: #fff;
+
+// Table Colors
+
+$tableHeadBackground: #f1f4f9;
+$tableRowHover: #fafafa;
+$tableRowBorderColor: #efefef;
+
+// Creating background classes
+$bgColors: (
+  "white": $whiteColor,
+);
+
+@each $colorName, $bgColor in $bgColors {
+  .bg-#{$colorName} {
+    background-color: $bgColor;
+  }
+}

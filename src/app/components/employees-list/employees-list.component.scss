@@ -1,1 +1,13 @@
 @import "/src/assets/scss/components/table";
+
+.employees-list {
+  border-radius: 5px;
+  padding: 20px;
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+}
