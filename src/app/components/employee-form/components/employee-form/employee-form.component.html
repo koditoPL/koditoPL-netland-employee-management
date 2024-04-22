@@ -2,9 +2,61 @@
     <form>
         <div class="border-bottom">
             <div class="employee-form_control">
-                <label for="name">Imię i nazwisko</label>
-                <input type="text" id="name" />
+                <div class="form-w-label">
+                    <label for="name"
+                        >Imię i nazwisko <span class="f-danger">*</span></label
+                    >
+                </div>
+                <div class="form-w-input">
+                    <input type="text" class="form-control" id="name" />
+                </div>
             </div>
+        </div>
+        <div class="border-bottom">
+            <div class="employee-form_control">
+                <div class="form-w-label">
+                    <label for="age"
+                        >Wiek <span class="f-danger">*</span></label
+                    >
+                </div>
+                <div class="form-w-input">
+                    <input type="number" class="form-control" id="age" />
+                </div>
+            </div>
+        </div>
+        <div class="border-bottom">
+            <div class="employee-form_control">
+                <div class="form-w-label">
+                    <label for="isFullTime">Pracownik pełnoetatowy</label>
+                </div>
+                <div class="form-w-input">
+                    <input
+                        type="checkbox"
+                        class="form-control"
+                        id="isFullTime"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="border-bottom">
+            <div class="employee-form_control">
+                <div class="form-w-label">
+                    <label for="isFullTime"
+                        >Stanowisko <span class="f-danger">*</span></label
+                    >
+                </div>
+                <div class="form-w-input">
+                    <select class="form-control">
+                        <option>Junior</option>
+                        <option>Mid</option>
+                        <option>Senior</option>
+                        <option>Manager</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="employee-form_actions">
+            <button type="submit" class="btn btn-lg btn-violet">Zapisz</button>
         </div>
     </form>
 </div>

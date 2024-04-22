@@ -1,8 +1,10 @@
+@import "/src/assets/scss/base/colors";
+
 .employee-form {
   margin: 50px auto 0;
 
   width: 500px;
-  border: 1px solid #ddd;
+  border: 1px solid $borderColor;
   border-radius: 10px;
 
   &_control {
@@ -11,12 +13,28 @@
     justify-content: space-between;
     padding: 20px 30px;
 
-    & label {
-      font-weight: 600;
-    }
-    & input {
+    & .form-w-label {
       width: 50%;
+      & label {
+        font-weight: 600;
+      }
     }
+
+    & .form-w-input {
+      width: 50%;
+      display: inherit;
+
+      & input,
+      & select {
+        width: 100%;
+      }
+    }
+  }
+
+  &_actions {
+    display: flex;
+    justify-content: end;
+    padding: 10px;
   }
 }
 

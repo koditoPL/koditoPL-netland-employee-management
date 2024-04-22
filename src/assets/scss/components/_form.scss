@@ -1,0 +1,15 @@
+@import "../base/colors";
+
+.form-control {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+}
+
+input {
+  &[type="checkbox"] {
+    height: 15px;
+    padding: 0;
+    margin: 0;
+  }
+}
