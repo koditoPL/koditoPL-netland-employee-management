@@ -1,0 +1,24 @@
+<div class="modal" *ngIf="isOpen">
+    <div class="modal-content">
+        <div class="modal-content_heading">
+            <h2>Usuwanie pracownika</h2>
+            <p>Czy napewno chcesz usunąć pracownika ?</p>
+        </div>
+        <div class="modal-action">
+            <button
+                type="button"
+                class="btn btn-lg btn-danger"
+                (click)="deleteEmployee()"
+            >
+                Anuluj
+            </button>
+            <button
+                type="button"
+                class="btn btn-lg btn-success"
+                (click)="close()"
+            >
+                Usuń pracownika
+            </button>
+        </div>
+    </div>
+</div>

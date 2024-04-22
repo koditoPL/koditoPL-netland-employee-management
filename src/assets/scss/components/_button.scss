@@ -21,6 +21,8 @@
 // Creating button classes
 $btnColors: (
   "violet": $violetBackground,
+  "danger": $danger,
+  "success": $success,
 );
 
 @each $colorName, $btnColor in $btnColors {

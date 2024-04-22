@@ -39,7 +39,11 @@
                                 edit_square
                             </span>
                         </button>
-                        <button type="button" class="btn btn-outline">
+                        <button
+                            type="button"
+                            class="btn btn-outline"
+                            (click)="deleteEmployee(index)"
+                        >
                             <span class="material-symbols-outlined f-danger">
                                 delete
                             </span>
@@ -50,3 +54,5 @@
         </tbody>
     </table>
 </div>
+
+<app-modal></app-modal>

@@ -32,4 +32,6 @@ export class EmployeesListComponent implements OnInit {
         },
       })
   }
+
+  deleteEmployee(index: number) {}
 }
