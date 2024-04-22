@@ -8,17 +8,40 @@ import { Observable, tap } from 'rxjs'
 })
 export class EmployeesService {
   private employeesUrl: string = 'assets/employees.json';
-  private employees: EmployeeNetland[] = [];
+  private employees: EmployeeNetland[] = [
+    {
+      name: "Piotr Nowak",
+      age: 25,
+      isFullTime: false,
+      position: Position.Junior
+    },
+    {
+      name: "Jan Kowalski",
+      age: 19,
+      isFullTime: true,
+      position: Position.Mid
+    },
+    {
+      name: "Piotr Nowak",
+      age: 38,
+      isFullTime: false,
+      position: Position.Senior
+    }
+  ]
+  ;
 
   constructor(private http: HttpClient) {}
 
-  getEmployees(): Observable<EmployeeNetland[]> {
-    return this.http
-      .get<EmployeeNetland[]>(this.employeesUrl)
-      .pipe(tap((data) => (this.employees = data)));
+  getEmployees(): EmployeeNetland[] {
+    return this.employees;
   }
 
   removeEmployee(employee_id: number): void {
     this.employees.splice(employee_id, 1);
   }
+
+  addEmployee(employee: EmployeeNetland): void{
+    this.employees.push(employee);
+  }
+
 }

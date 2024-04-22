@@ -5,6 +5,8 @@ import {
   EmployeeNetland,
   Position,
 } from 'src/app/core/models/employee.interface'
+import { EmployeesService } from 'src/app/core/services/employees.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-form',
@@ -17,7 +19,7 @@ export class EmployeeFormComponent implements OnInit {
 
   @Input() employee: EmployeeNetland = this.emptyEmployes;
 
-  constructor() {
+  constructor(private employeesService: EmployeesService, private router: Router) {
     this.employeeForm = EmployeeFormBulder.initialize(this.employee);
   }
 
@@ -32,7 +34,10 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.employeeForm);
+    if(this.employeeForm.valid){
+      this.employeesService.addEmployee(this.employeeForm.value);
+      this.router.navigate(['/']);
+    }
   }
 
   get emptyEmployes(): EmployeeNetland {

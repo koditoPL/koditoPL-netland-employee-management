@@ -21,22 +21,11 @@ export class EmployeesListComponent implements OnInit {
   public employees: EmployeeNetland[] = [];
 
   constructor(
-    private employeesService: EmployeesService,
-    private changeDetector: ChangeDetectorRef
+    private employeesService: EmployeesService
   ) {}
 
   ngOnInit(): void {
-    this.employeesService
-      .getEmployees()
-      .pipe(take(1))
-      .subscribe({
-        next: (res) => {
-          this.employees = res;
-        },
-        error: (err) => {
-          console.log(err)
-        },
-      })
+    this.employees = this.employeesService.getEmployees();
   }
 
   deleteEmployee(index: number) {
