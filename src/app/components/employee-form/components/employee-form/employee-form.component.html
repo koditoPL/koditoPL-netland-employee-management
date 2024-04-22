@@ -1,5 +1,5 @@
 <div class="employee-form">
-    <form>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
         <div class="border-bottom">
             <div class="employee-form_control">
                 <div class="form-w-label">
@@ -8,7 +8,12 @@
                     >
                 </div>
                 <div class="form-w-input">
-                    <input type="text" class="form-control" id="name" />
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        formControlName="name"
+                    />
                 </div>
             </div>
         </div>
@@ -20,7 +25,12 @@
                     >
                 </div>
                 <div class="form-w-input">
-                    <input type="number" class="form-control" id="age" />
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="age"
+                        formControlName="age"
+                    />
                 </div>
             </div>
         </div>
@@ -34,6 +44,7 @@
                         type="checkbox"
                         class="form-control"
                         id="isFullTime"
+                        formControlName="isFullTime"
                     />
                 </div>
             </div>
@@ -46,11 +57,13 @@
                     >
                 </div>
                 <div class="form-w-input">
-                    <select class="form-control">
-                        <option>Junior</option>
-                        <option>Mid</option>
-                        <option>Senior</option>
-                        <option>Manager</option>
+                    <select class="form-control" formControlName="position">
+                        <option
+                            [value]="position"
+                            *ngFor="let position of positions"
+                        >
+                            {{ position }}
+                        </option>
                     </select>
                 </div>
             </div>
