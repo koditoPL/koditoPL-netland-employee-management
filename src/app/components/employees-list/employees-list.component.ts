@@ -9,6 +9,9 @@ import { EmployeesService } from 'src/app/core/services/employees.service'
   styleUrls: ['./employees-list.component.scss'],
 })
 export class EmployeesListComponent implements OnInit {
+  public openModal: boolean = false
+  public removedEmployeeId?: number
+
   public displayedColumns: string[] = [
     'Imię i nazwisko',
     'Wiek',
@@ -33,5 +36,12 @@ export class EmployeesListComponent implements OnInit {
       })
   }
 
-  deleteEmployee(index: number) {}
+  deleteEmployee(index: number) {
+    this.removedEmployeeId = index
+    this.openModal = true
+  }
+
+  closeModal(isClose: boolean): void {
+    this.openModal = !isClose
+  }
 }

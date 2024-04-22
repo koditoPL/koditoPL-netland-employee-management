@@ -8,24 +8,18 @@ import { EmployeesService } from 'src/app/core/services/employees.service'
   styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent implements OnInit {
-  @Output() deleteObject: EventEmitter<string> = new EventEmitter<string>()
-  @Output() cancel: EventEmitter<void> = new EventEmitter<void>()
-  @Input() employeeName?: string
+  @Output() deleteEmployee: EventEmitter<string> = new EventEmitter<string>()
+  @Output() closeModal: EventEmitter<boolean> = new EventEmitter<boolean>()
+  @Input() openModal?: boolean
   @Input() employeeIndex?: number
 
-  constructor(private employeesService: EmployeesService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.employeeIndex)
+  ngOnInit(): void {}
+
+  deleteNetlandEmployee(): void {}
+
+  close(): void {
+    this.closeModal.emit(true)
   }
-
-  isOpen: boolean = false
-
-  open(): void {
-    this.isOpen = true
-  }
-
-  deleteEmployee(): void {}
-
-  close(): void {}
 }

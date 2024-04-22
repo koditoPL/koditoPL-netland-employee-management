@@ -55,4 +55,8 @@
     </table>
 </div>
 
-<app-modal></app-modal>
+<app-modal
+    [employeeIndex]="removedEmployeeId"
+    [openModal]="openModal"
+    (closeModal)="closeModal($event)"
+></app-modal>
