@@ -1,20 +1,28 @@
 @import "../base/colors";
 
-.btn {
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
+button {
+  &.btn {
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
 
-  &-lg {
-    padding: 15px 20px;
+    &.btn-outline {
+      background-color: transparent;
+    }
+    &-lg {
+      padding: 15px 20px;
+    }
+
+    & span {
+      font-size: 22px;
+    }
   }
 
-  & span {
-    font-size: 22px;
+  &[disabled] {
+    cursor: default;
   }
 }
 
@@ -32,6 +40,12 @@ $btnColors: (
 
     &:hover {
       background-color: darken($btnColor, 10%);
+    }
+    &[disabled] {
+      background-color: lighten($btnColor, 10%);
+      &:hover {
+        background-color: lighten($btnColor, 10%);
+      }
     }
   }
 }

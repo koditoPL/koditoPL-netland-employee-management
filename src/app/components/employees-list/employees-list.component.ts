@@ -9,16 +9,16 @@ import { EmployeesService } from 'src/app/core/services/employees.service'
   styleUrls: ['./employees-list.component.scss'],
 })
 export class EmployeesListComponent implements OnInit {
-  public openModal: boolean = false
-  public removedEmployeeId: number | null = null
+  public openModal: boolean = false;
+  public removedEmployeeId: number | null = null;
 
   public displayedColumns: string[] = [
     'Imię i nazwisko',
     'Wiek',
     'Pracownik pełnoetatowy',
     'Stanowisko',
-  ]
-  public employees: EmployeeNetland[] = []
+  ];
+  public employees: EmployeeNetland[] = [];
 
   constructor(
     private employeesService: EmployeesService,
@@ -31,7 +31,7 @@ export class EmployeesListComponent implements OnInit {
       .pipe(take(1))
       .subscribe({
         next: (res) => {
-          this.employees = res
+          this.employees = res;
         },
         error: (err) => {
           console.log(err)
@@ -40,11 +40,11 @@ export class EmployeesListComponent implements OnInit {
   }
 
   deleteEmployee(index: number) {
-    this.removedEmployeeId = index
-    this.openModal = true
+    this.removedEmployeeId = index;
+    this.openModal = true;
   }
 
   closeModal(): void {
-    this.openModal = false
+    this.openModal = false;
   }
 }

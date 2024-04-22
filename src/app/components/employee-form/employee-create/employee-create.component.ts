@@ -1,8 +1,4 @@
 import { Component } from '@angular/core'
-import {
-  EmployeeNetland,
-  Position,
-} from 'src/app/core/models/employee.interface'
 
 @Component({
   selector: 'app-employee-create',

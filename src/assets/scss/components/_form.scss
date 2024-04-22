@@ -12,4 +12,8 @@ input {
     padding: 0;
     margin: 0;
   }
+
+  &.ng-invalid.ng-touched {
+    border-color: $danger;
+  }
 }
