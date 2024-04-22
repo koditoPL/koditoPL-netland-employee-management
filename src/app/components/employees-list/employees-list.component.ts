@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core'
 import { take } from 'rxjs'
 import { EmployeeNetland } from 'src/app/core/models/employee.interface'
 import { EmployeesService } from 'src/app/core/services/employees.service'
@@ -10,7 +10,7 @@ import { EmployeesService } from 'src/app/core/services/employees.service'
 })
 export class EmployeesListComponent implements OnInit {
   public openModal: boolean = false
-  public removedEmployeeId?: number
+  public removedEmployeeId: number | null = null
 
   public displayedColumns: string[] = [
     'Imię i nazwisko',
@@ -20,7 +20,10 @@ export class EmployeesListComponent implements OnInit {
   ]
   public employees: EmployeeNetland[] = []
 
-  constructor(private employeesService: EmployeesService) {}
+  constructor(
+    private employeesService: EmployeesService,
+    private changeDetector: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.employeesService
@@ -41,7 +44,7 @@ export class EmployeesListComponent implements OnInit {
     this.openModal = true
   }
 
-  closeModal(isClose: boolean): void {
-    this.openModal = !isClose
+  closeModal(): void {
+    this.openModal = false
   }
 }
