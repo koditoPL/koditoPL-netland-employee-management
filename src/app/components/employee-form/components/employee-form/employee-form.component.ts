@@ -18,6 +18,7 @@ export class EmployeeFormComponent implements OnInit {
   public positions: Position[] = [];
 
   @Input() employee!: EmployeeNetland;
+  @Input() editedId: number | null = null;
 
   constructor(private employeesService: EmployeesService, private router: Router) {}
 
@@ -34,7 +35,12 @@ export class EmployeeFormComponent implements OnInit {
 
   onSubmit(): void {
     if(this.employeeForm.valid){
-      this.employeesService.addEmployee(this.employeeForm.value);
+      if(!this.editedId){
+        this.employeesService.addEmployee(this.employeeForm.value);
+      }
+      else{
+        this.employeesService.updateEmployee(this.employeeForm.value, +this.editedId);
+      }
       this.router.navigate(['/']);
     }
   }

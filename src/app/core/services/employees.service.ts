@@ -48,4 +48,9 @@ export class EmployeesService {
     this.employees.push(employee);
   }
 
+  updateEmployee(updatedEmployee: EmployeeNetland, employeeIndex: number): void{
+    const updatedEmployees: EmployeeNetland[] = this.employees.map( (employee, index) => (index === employeeIndex) ? updatedEmployee : employee);
+    this.employees = updatedEmployees;
+  }
+
 }

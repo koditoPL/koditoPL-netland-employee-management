@@ -10,6 +10,7 @@ import { EmployeesService } from 'src/app/core/services/employees.service';
 })
 export class EmployeeEditComponent implements OnInit{
   public editEmployee!: EmployeeNetland;
+  public editedId!: number;
 
   constructor(private activatedRoute: ActivatedRoute,private employeesService: EmployeesService){
   }
@@ -17,6 +18,7 @@ export class EmployeeEditComponent implements OnInit{
     this.activatedRoute.params.subscribe({
       next: (param) => {
         this.editEmployee =  this.employeesService.getOneEmployees(param['id']);
+        this.editedId = param['id'];
       }
     })
   }
