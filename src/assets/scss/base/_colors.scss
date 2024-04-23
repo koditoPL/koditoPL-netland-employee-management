@@ -38,6 +38,7 @@ $textColors: (
   "danger": $danger,
   "success": $success,
   "secondary": $secondary,
+  "violet": $violetBackground
 );
 
 @each $colorName, $textColor in $textColors {

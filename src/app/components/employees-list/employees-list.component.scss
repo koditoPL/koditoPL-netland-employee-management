@@ -1,4 +1,6 @@
 @import "/src/assets/scss/components/table";
+@import "/src/assets/scss/layout/_breakpoints";
+
 
 .employees-list {
   &__heading {
@@ -12,11 +14,14 @@
     tbody {
       & > tr {
         & .col-action {
-          opacity: 0;
+          opacity: 1;
           display: flex;
           justify-content: center;
           align-items: center;
           transition: opacity 0.1s ease-in;
+          @include breakpoint(sm){
+            opacity: 0;
+          }
         }
 
         &:hover {
