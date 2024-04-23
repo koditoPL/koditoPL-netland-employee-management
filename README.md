@@ -7,7 +7,6 @@ Aplikacja została stworzona w Angularze i umożliwia zarządzanie listą pracow
 Formularz: Użytkownik może dodawać nowych pracowników, wprowadzając ich imię i nazwisko, wiek, wybierając stanowisko oraz zaznaczając, czy są pełnoetatowi.
 
 Tabela: Wyświetla listę dodanych pracowników z możliwością edycji i usuwania każdego z wpisów.
-Edycja w tabeli: Po kliknięciu na pole w tabeli, użytkownik może edytować jego wartość bezpośrednio w miejscu.
 
 # Sposób uruchomienia
 
