@@ -38,7 +38,7 @@
                 <td>{{ employee.position }}</td>
                 <td>
                     <div class="col-action">
-                        <button type="button" class="btn btn-outline">
+                        <button type="button" class="btn btn-outline" [routerLink]="['', 'edit-employee', index]">
                             <span class="material-symbols-outlined f-secondary">
                                 edit_square
                             </span>

@@ -36,6 +36,10 @@ export class EmployeesService {
     return this.employees;
   }
 
+  getOneEmployees(id: number): EmployeeNetland {
+    return this.employees[id];
+  }
+
   removeEmployee(employee_id: number): void {
     this.employees.splice(employee_id, 1);
   }

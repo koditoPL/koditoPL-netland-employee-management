@@ -14,17 +14,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./employee-form.component.scss'],
 })
 export class EmployeeFormComponent implements OnInit {
-  public employeeForm: FormGroup;
+  public employeeForm!: FormGroup;
   public positions: Position[] = [];
 
-  @Input() employee: EmployeeNetland = this.emptyEmployes;
+  @Input() employee!: EmployeeNetland;
 
-  constructor(private employeesService: EmployeesService, private router: Router) {
-    this.employeeForm = EmployeeFormBulder.initialize(this.employee);
-  }
+  constructor(private employeesService: EmployeesService, private router: Router) {}
 
   ngOnInit(): void {
-    this.positions = Object.values(Position)
+    this.positions = Object.values(Position);
+    this.employeeForm = EmployeeFormBulder.initialize(this.employee);
   }
 
   changeValid(event: any) {
@@ -40,12 +39,4 @@ export class EmployeeFormComponent implements OnInit {
     }
   }
 
-  get emptyEmployes(): EmployeeNetland {
-    return {
-      name: '',
-      age: null,
-      isFullTime: false,
-      position: Position.Junior,
-    }
-  }
 }

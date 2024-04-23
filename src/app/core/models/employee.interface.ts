@@ -1,8 +1,8 @@
 export interface EmployeeNetland {
-  name: string
-  age: number | null
-  isFullTime: boolean
-  position: Position | null
+  name: string,
+  age: number | null,
+  isFullTime: boolean,
+  position: Position,
 }
 
 export enum Position {
